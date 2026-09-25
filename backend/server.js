@@ -22,4 +22,9 @@ const router = require("./routes/userrouter");
 app.use("/api", router);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+if (require.main === module) {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
 module.exports = app;
