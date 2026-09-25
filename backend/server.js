@@ -8,14 +8,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-connectDB();
-
 app.get("/", (req, res) => {
     res.json({
         success: true,
         message: "Backend is running"
     });
 });
+
+connectDB();
 
 const router = require("./routes/userrouter");
 
