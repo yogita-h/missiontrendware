@@ -10,6 +10,14 @@ app.use(express.json());
 
 connectDB();
 
+// Test route
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "Mission Trendware backend is running"
+    });
+});
+
 const router = require("./routes/userrouter");
 
 app.use("/api", router);
